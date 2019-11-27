@@ -1,0 +1,98 @@
+<body>
+<style id="simulator_style">
+    #simulator .app-container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+    }
+
+    #simulator .console_div {
+        width: 830px;
+       height: 600px;
+        margin-top: 20px;
+        background-color: #000000;
+        overflow: hidden;
+    }
+
+    #simulator .console_div_head {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: gray;
+    }
+
+    #simulator .console_div_content {
+        height: 600px;
+        color: green;
+        background: transparent;
+        overflow-y: scroll;
+    }
+
+    #simulator .tools_area {
+        width: 660px;
+        margin-top: 20px;
+        min-height: 600px;
+        margin-left: 20px;
+        border: 1px solid #ffffff;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    #simulator .btn-group-horizontal button {
+        font-size: 20px;
+        min-width: 150px;
+        height: 62px;
+        min-height: 62px;
+    }
+
+
+</style>
+<div class="body-container">
+    <div class="console_div">
+        <div class="console_div_head">
+            console
+        </div>
+        <div class="console_div_content">
+            <div id="qrcodepic"></div>
+        </div>
+    </div>
+    <div class="tools_area">
+        <div class="btn-group-horizontal" id="btn_group">
+            <button id="btn_exit" class="btn btn__available">exit</button>
+            <button id="btn_close" class="btn btn__available">close</button>
+            <hr>
+            <button id="btn_keyboard" class="btn btn__available">键盘</button>
+            <button id="btn_Bluetooth" class="btn btn__available">蓝牙</button>
+            <button id="btn_telephony" class="btn btn__available">电话</button>
+            <button id="btn_currentLocation" class="btn btn__available">当前位置</button>
+             <button id="recentDestinations" class="btn btn__available">获取目的地</button>
+            <button id="btn_setDestinations" class="btn btn__available">设置导航</button>
+            <button id="btn_requestLoginPrompt" class="btn btn__available">登录</button>
+            <button id="btn_notification" class="btn btn__available">通知</button>
+            <button id="btn_network" class="btn btn__available">网络</button>
+            <button id="btn_voice" class="btn btn__available">语音</button>
+            <button id="btn_getProfileList" class="btn btn__available">用户列表</button>
+            <button id="btn_firstUserLogin" class="btn btn__available">用户登录状态</button>
+            <button id="btn_showbackbutton" class="btn btn__available">显示返回按钮</button>
+            <button id="btn_hidebackbutton" class="btn btn__available">隐藏返回按钮</button>
+            <button id="btn_agent" class="btn btn__available">agent</button>
+            <hr/>
+            <button id="btn_unbind" class="btn btn__available">解绑车辆</button>
+            <button id="btn_qrcode" class="btn btn__available">显示二维码</button>
+            <button id="btn_IsMoving" class="btn btn__available">检测移动</button>
+            <hr>
+            <button id="btn_intents" class="btn btn__available">intents</button>
+            <button id="btn_intents_support_action" class="btn btn__available">support actions</button>
+            <button id="btn_loadAgent" class="btn btn__available">添加Agent</button>
+            <button id="btn_lanuchAgent" class="btn btn__available">lanuch</button>
+
+        </div>
+    </div>
+</div>
+<script class="simulator_script" src="../js/qrcode.min.js"></script>
+<script class="simulator_script" src="../modules/simulator.js"></script>
+</body>

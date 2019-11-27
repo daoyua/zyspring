@@ -5,6 +5,7 @@
       <configuration>
         <fileset id="fileset" name="SpringApplication" removed="false">
           <file>file://$MODULE_DIR$/src/main/java/com/springtest/zy/spring/SpringApplication.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/SpringApplication.xml</file>
         </fileset>
       </configuration>
     </facet>

@@ -1,0 +1,334 @@
+body {
+    width: 1920px;
+    height: 720px;
+}
+
+.menu-bar-debt ul li:nth-child(3) span {
+    position: relative;
+}
+
+.menu-bar-debt ul li:nth-child(3) span:after {
+    content: attr(data-content);
+    position: absolute;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    background: rgba(66, 119, 127, 1);
+    color: rgba(255, 255, 255, 1);
+    top: -26px;
+    right: -34px;
+    box-sizing: border-box;
+
+}
+
+.menu-bar-debt ul li:nth-child(3) span:after {
+
+}
+
+.night .Icon_Close_NightMode {
+    font-size: 42px;
+    color: #fff;
+}
+
+.day .Icon_Close_NightMode {
+    font-size: 42px;
+    color: #000;
+}
+
+body.night .menu-bar .menu-bar__button {
+    color: #B2B2B2;
+    letter-spacing: 3.8px;
+}
+
+.backbutton {
+    width: 120px;
+    height: 120px;
+    font-size: 36px;
+    left: 180px;
+}
+
+.show-modul {
+    display: none;
+    height: 720px;
+    width: 1574px;
+    background-color: rgba(32, 38, 43, 0.95);
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-left: 174px;
+    z-index: 99;
+}
+
+.driving-content {
+    height: 100px;
+    width: 810px;
+    color: #FFFFFF;
+    font-size: 42px;
+    line-height: 50px;
+    text-align: center;
+    padding: 310px 382px;
+}
+
+#index_page_loading {
+    z-index: 3;
+}
+#des_nearby_img_load_bg, #img_load_error_bg{
+    width: 600px;
+    position: absolute;
+    margin-left: 438px;
+    margin-top: -55px;
+    align-items: center;
+    justify-content: center;
+}
+#des_nearby_img_load{
+    margin-left: 430px;
+    margin-top: -80px;
+}
+#img_load_text, #img_load_error_text {
+    top: 162px;
+    position: relative;
+    color: #fff;
+    font-size: 36px;
+    z-index: 2;
+    width: 540px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+#img_load_error_btn {
+    color: #fff;
+    font-size: 58px;
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    text-align: center;
+    line-height: 320px;
+    margin-top: -42px;
+    z-index: 1;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-container-tab {
+    animation-name: feadin;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 1
+}
+
+@keyframes feadin {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.body-container-leave {
+    animation-name: feadout;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 1
+}
+
+@keyframes feadout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.loading_bg {
+    position: fixed;
+    z-index: 3;
+    width: 1920px;
+    height: 720px;
+    opacity: 0.8;
+    background: #000000;
+    display: none;
+}
+
+
+.night #index_page_loading_text {
+    width: 1440px;
+    height: 50px;
+    font-size: 42px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 1);
+    line-height: 50px;
+    position: absolute;
+    text-align: center;
+    top: 515px;
+    left: 240px;
+    justify-content: center;
+}
+
+.jlr_menu {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 3;
+    margin-top: 80px;
+}
+
+.jlr_menu .item_group {
+    width: 612px;
+    height: 56px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.jlr_menu .item_group div:nth-child(2),
+.jlr_menu .item_group div:nth-child(2) span {
+    width: 77px;
+    height: 50px;
+}
+
+.jlr_menu .item_group div {
+    height: 50px;
+    color: #B2B2B2;
+    font-size: 38px;
+    letter-spacing: 3.8px;
+    line-height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    animation-name: jumpup;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+
+}
+
+.jlr_menu .item_group div:nth-child(1) {
+    animation-delay: .2s;
+}
+
+.jlr_menu .item_group div:nth-child(2) {
+    animation-delay: .3s;
+}
+
+.jlr_menu .item_group div:nth-child(3) {
+    animation-delay: .4s;
+}
+
+.jlr_menu .item_group div.nav_active {
+    color: #B2B2B2;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.jlr_menu .item_group div.nav_active span {
+    animation-name: txtactive;
+    animation-duration: .333s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+.jlr_menu .item_group div.nav_active:after {
+    content: " ";
+    width: 0;
+    height: 2px;
+    background-color: #D1A57D;
+    margin-top: 4px;
+    animation-name: lineactive;
+    animation-duration: .333s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+.jlr_menu .item_group div.nav_leave {
+    color: #B2B2B2;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.jlr_menu .item_group div.nav_leave:after {
+    content: " ";
+    width: 100%;
+    height: 2px;
+    background-color: #B2B2B2;
+    margin-top: 4px;
+    animation-name: lineleave;
+    animation-duration: .333s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 0.00, 0.00, 1.00);
+    animation-iteration-count: 1
+}
+
+@keyframes jumpup {
+    from {
+        margin-top: 0px;
+    }
+    to {
+        margin-top: -80px;
+    }
+}
+
+@keyframes txtactive {
+    from {
+        color: #B2B2B2;
+    }
+    to {
+        color: #D1A57D;
+    }
+}
+
+@keyframes lineactive {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes lineactive_jump {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes lineleave {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+.app-container {
+    display: none;
+}
+
+.app-container:nth-child(1) {
+    display: flex;
+}

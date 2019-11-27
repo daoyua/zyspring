@@ -1,0 +1,341 @@
+<body>
+<style type="text/css" class="vechileinfo_style">
+    a {
+        text-decoration: none;
+    }
+
+    #vechileinfo .body-container {
+        padding-top: 82px;
+        padding-left: 60px;
+        width: 1560px;
+        box-sizing: border-box;
+    }
+
+    #vechileinfo.day > .app-container {
+        color: #4D4D4D;
+    }
+
+    #vechileinfo.night > .app-container {
+        color: #B2B2B2;
+    }
+
+    #vechileinfo .page_title {
+        width: 1440px;
+        height: 40px;
+        font-size: 36px;
+        font-weight: normal;
+        line-height: 40px;
+    }
+
+    #vechileinfo .input_container {
+        margin-top: 98px;
+        height: 95px;
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    #vechileinfo .simulateInput_icon_container {
+        width: 90px;
+        height: 90px;
+        flex-flow: row nowrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -8px;
+        margin-bottom: 4px;
+        box-sizing: border-box;
+
+    }
+
+    #vechileinfo .simulateInput_icon {
+        margin-left: 35px;
+    }
+
+    #vechileinfo .simulateInput {
+        width: 690px;
+        height: 95px;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        box-sizing: border-box;
+        font-size: 42px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    #vechileinfo.night .simulateInputPleaceHolder {
+        width: 580px;
+        height: 50px;
+        margin-left: 10px;
+        align-self: flex-end;
+        margin-bottom: 25px;
+    }
+
+    #vechileinfo.night .simulateInput_phone .simulateInputPleaceHolder {
+        margin-bottom: 23.5px;
+    }
+
+    #vechileinfo.day .simulateInputPleaceHolder {
+        width: 548px;
+        height: 50px;
+        margin-left: 10px;
+        color: #000;
+    }
+
+    #vechileinfo .simulateInput:nth-child(1) {
+        margin-right: 60px;
+    }
+
+    #vechileinfo .errorMsg_container {
+        margin-top: 20px;
+        width: 1440px;
+        height: 50px;
+        font-size: 36px;
+        font-weight: 300;
+        color: #FF4D4D;
+        line-height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #vechileinfo .tools_area {
+        height: 120px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 95px;
+    }
+
+    #vechileinfo .common_chkbox {
+        width: 120px;
+        height: 120px;
+        margin-left: -30px;
+    }
+
+    #vechileinfo .common_chkbox .iconfont {
+        font-size: 44px;
+    }
+
+    #vechileinfo .icon-checked {
+        display: none;
+    }
+
+    #vechileinfo .common_chkbox_desc {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    #vechileinfo .common_chkbox_desc_span {
+        align-items: center;
+        width: 914px;
+        height: 80px;
+        font-size: 36px;
+        justify-content: start;
+        display: flex;
+        line-height: 40px;
+    }
+
+    #vechileinfo.night .common_chkbox_desc a {
+        font-size: 36px;
+        color: #579EA8;
+    }
+
+    #vechileinfo.day .common_chkbox_desc a {
+        font-size: 36px;
+        color: #42777F;
+    }
+
+    #vechileinfo .btn_active {
+        width: 421px;
+        height: 120px;
+        font-size: 42px;
+        background: rgba(66, 119, 127, 1);
+        border-radius: 1px;
+        color: rgba(255,255,255,1);
+    }
+
+    #vechileinfo .btn__normal {
+        width: 420px;
+    }
+
+    #vechileinfo .safe_driving {
+        width: 1574px;
+        height: 600px;
+        background: rgba(32, 38, 43, 0.95);
+        position: fixed;
+        top: 120px;
+    }
+
+    #vechileinfo .safe_driving span {
+        width: 100%;
+        height: 50px;
+        font-size: 42px;
+        font-weight: normal;
+        line-height: 50px;
+        text-align: center;
+        margin-top: 195px;
+    }
+
+    #vechileinfo .simulateInput .iconfont {
+        width: 120px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -18px;
+        align-self: flex-end;
+        margin-bottom: -13px;
+    }
+
+    #vechileinfo .simulateInput_phone .iconfont {
+        margin-left: -30px;
+        margin-bottom: -15.5px;
+    }
+
+    #vechileinfo.night .simulateInput .iconfont {
+        color: #fff;
+    }
+
+    #vechileinfo.day .simulateInput .iconfont {
+        color: #000;
+    }
+
+    #vechileinfo .link_area {
+        width: 914px;
+        height: 40px;
+
+    }
+
+    body.day .common_chkbox .icon-dischecked {
+        width: 120px;
+        height: 120px;
+        /*todo:图片需要进行替换*/
+        background-image: url("./images/Checkbox_Unselected_Day.png");
+        background-size: 100% 100%;
+    }
+
+    body.day .common_chkbox .icon-dischecked:before {
+        content: '';
+    }
+
+    body.night .common_chkbox .icon-dischecked {
+        width: 120px;
+        height: 120px;
+        /*todo:图片需要进行替换*/
+        background-image: url("./images/Checkbox_Unselected_Night.png");
+        background-size: 100% 100%;
+    }
+
+    body.night .common_chkbox .icon-dischecked:before {
+        content: '';
+    }
+
+    body.day .common_chkbox .icon-checked {
+        width: 120px;
+        height: 120px;
+        /*todo:图片需要进行替换*/
+        background-image: url("./images/Checkbox_Selected_Day.png");
+        background-size: 100% 100%;
+    }
+
+    body.day .common_chkbox .icon-checked:before {
+        content: '';
+    }
+
+    body.night .common_chkbox .icon-checked {
+        width: 120px;
+        height: 120px;
+        /*todo:图片需要进行替换*/
+        background-image: url("./images/Checkbox_Selected_Night.png");
+        background-size: 100% 100%;
+    }
+
+    body.night .common_chkbox .icon-checked:before {
+        content: '';
+    }
+
+    #vechileinfo .btn-group-horizontal {
+        position: absolute;
+        right: 240px;
+    }
+
+    #vechileinfo .Icon_QRcode_NightMode {
+        font-size: 33px;
+    }
+
+    #vechileinfo .Icon_Phone_NightMode {
+        font-size: 50px;
+    }
+
+    .init_txt {
+        color: #ffffff !important;
+    }
+
+    /*渐隐渐显动画 start*/
+    #vechileinfo {
+        animation: 2s fadingout 0s;
+        -webkit-animation: 2s fadingout 0s;
+    }
+    @-webkit-keyframes fadingout {
+        0%{opacity:0}
+        20%{opacity:.2}
+        40%{opacity:.4}
+        60%{opacity:.6}
+        80%{opacity:.8}
+        100%{opacity:1;}
+    }
+    /*渐隐渐显动画 end*/
+</style>
+
+<div class="body-container">
+    <div data-translate="vechileinfo.page_desc" class="page_title">请填写以下信息完成激活流程</div>
+    <div class="input_container">
+        <div class="simulateInput">
+            <span class="icon Icon_QRcode_NightMode iconfont "></span>
+            <div data-translate="vechileinfo.inputLabel_plateNo" id="vechile_plateNum"
+                 class="simulateInputPleaceHolder">车牌信息
+            </div>
+        </div>
+        <div class="simulateInput simulateInput_phone">
+            <span class="icon iconfont Icon_Phone_NightMode"></span>
+            <div data-translate="vechileinfo.inputLabel_phone" id="vechile_phoneNum"
+                 class="phoneInput simulateInputPleaceHolder">手机号码
+            </div>
+        </div>
+    </div>
+    <div id="errorMsg_container" class="errorMsg_container">
+    </div>
+    <div class="tools_area">
+        <div class="common_chkbox app_border">
+            <span class="icon iconfont icon-dischecked Components_Selector_Checkbox_Unselected_DayMod"></span>
+            <span class="icon iconfont icon-checked Components_Selector_Checkbox_Selected_DayMode"></span>
+        </div>
+        <div class="common_chkbox_desc">
+            <span data-translate="vechileinfo.chkText_userAgreementDesc"
+                  class="common_chkbox_desc_span">我接受服务协议和隐私条款。</span>
+            <span class="link_area">
+                    <a data-translate="vechileinfo.linkText_userAgreement" href="#agreement">查看条款详情</a>
+                </span>
+        </div>
+        <div class="btn-group-horizontal">
+            <button data-translate="vechileinfo.btnText_active" id="vechileinfo_btn_active"
+                    class="btn btn_active btn__normal" disabled>
+                激活服务
+            </button>
+        </div>
+    </div>
+    <div class="safe_driving" style="display: none">
+        <span>为了保障安全，当前信息需在停车状态下进行填写。</span>
+    </div>
+</div>
+
+<script id="vechileinfo_script" src="../modules/vechileinfoPage.js"></script>
+</body>

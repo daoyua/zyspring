@@ -1,0 +1,417 @@
+@media (max-aspect-ratio: 8/3) { 
+
+@keyframes infiniteLoop {
+	10%, 100% {opacity: 0;}
+	0%, 2% {opacity: 1;}
+} 
+/*this is for example purposes only*/
+#toggleAnim {
+	position: absolute;
+	width: var(--two-column-width);
+	height: var(--one-row-height);
+	border-width: 1px;
+	border-style: solid;
+	border-color: black;
+	left: var(--five-column-width);
+	margin-left: 60px;
+	font-size: 36px;
+}
+
+/*home button for example purposes only*/
+#homeButton {
+	position: absolute;
+	border-width: 1px;
+	top: 0px;
+	left: 0px;
+	margin-left: 60px;
+	margin-top: 60px;
+	font-size: 36px;
+}
+
+/*This is an example container that takes up the whole screen -- in an app this would probably be in a 
+page container*/
+#tempContainerForAnimation {
+	width: var(--app-area-no-sidebars);
+    height: var(--five-row-height);
+    /*temp background color to see night mode*/
+	/*background: black;*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#loadingAnimationContainer {
+	width: 320px;
+	height: 320px;
+	display: none;
+}
+
+.loading {
+	position: absolute;
+	width: 320px;
+	height: 320px;
+}
+
+
+/****************Night Mode Loops******************/
+body.night .animationContainer #Loop00 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop00.png);
+	animation: 1200ms linear 0ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop01 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop01.png);
+	animation: 1200ms linear 25ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop02 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop02.png);
+	animation: 1200ms linear 50ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop03 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop03.png);
+	animation: 1200ms linear 75ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop04 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop04.png);
+	animation: 1200ms linear 100ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop05 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop05.png);
+	animation: 1200ms linear 125ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop06 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop06.png);
+	animation: 1200ms linear 150ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop07 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop07.png);
+	animation: 1200ms linear 175ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop08 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop08.png);
+	animation: 1200ms linear 200ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop09 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop09.png);
+	animation: 1200ms linear 225ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop10 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop10.png);
+	animation: 1200ms linear 250ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop11 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop11.png);
+	animation: 1200ms linear 275ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop12 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop12.png);
+	animation: 1200ms linear 300ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop13 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop13.png);
+	animation: 1200ms linear 350ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop14 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop14.png);
+	animation: 1200ms linear 400ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop15 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop15.png);
+	animation: 1200ms linear 450ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop16 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop16.png);
+	animation: 1200ms linear 500ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop17 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop17.png);
+	animation: 1200ms linear 550ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop18 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop18.png);
+	animation: 1200ms linear 600ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop19 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop19.png);
+	animation: 1200ms linear 650ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop20 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop20.png);
+	animation: 1200ms linear 700ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop21 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop21.png);
+	animation: 1200ms linear 750ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop22 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop22.png);
+	animation: 1200ms linear 800ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop23 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop23.png);
+	animation: 1200ms linear 825ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop24 {
+	opacity: 0;content: url(assets/Night/Loading-Loop24.png);
+	animation: 1200ms linear 850ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop25 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop25.png);
+	animation: 1200ms linear 875ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop26 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop26.png);
+	animation: 1200ms linear 900ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop27 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop27.png);
+	animation: 1200ms linear 925ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop28 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop28.png);
+	animation: 1200ms linear 950ms infinite infiniteLoop;
+}
+
+body.night .animationContainer #Loop29 {
+	opacity: 0;
+	content: url(assets/Night/Loading-Loop29.png);
+	animation: 1200ms linear 975ms infinite infiniteLoop;
+}
+
+/****************Day Mode Loops******************/
+body.day .animationContainer #Loop00 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop00.png);
+	animation: 1200ms linear 0ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop01 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop01.png);
+	animation: 1200ms linear 25ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop02 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop02.png);
+	animation: 1200ms linear 50ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop03 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop03.png);
+	animation: 1200ms linear 75ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop04 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop04.png);
+	animation: 1200ms linear 100ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop05 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop05.png);
+	animation: 1200ms linear 125ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop06 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop06.png);
+	animation: 1200ms linear 150ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop07 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop07.png);
+	animation: 1200ms linear 175ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop08 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop08.png);
+	animation: 1200ms linear 200ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop09 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop09.png);
+	animation: 1200ms linear 225ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop10 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop10.png);
+	animation: 1200ms linear 250ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop11 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop11.png);
+	animation: 1200ms linear 275ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop12 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop12.png);
+	animation: 1200ms linear 300ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop13 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop13.png);
+	animation: 1200ms linear 350ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop14 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop14.png);
+	animation: 1200ms linear 400ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop15 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop15.png);
+	animation: 1200ms linear 450ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop16 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop16.png);
+	animation: 1200ms linear 500ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop17 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop17.png);
+	animation: 1200ms linear 550ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop18 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop18.png);
+	animation: 1200ms linear 600ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop19 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop19.png);
+	animation: 1200ms linear 650ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop20 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop20.png);
+	animation: 1200ms linear 700ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop21 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop21.png);
+	animation: 1200ms linear 750ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop22 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop22.png);
+	animation: 1200ms linear 800ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop23 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop23.png);
+	animation: 1200ms linear 825ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop24 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop24.png);
+	animation: 1200ms linear 850ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop25 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop25.png);
+	animation: 1200ms linear 875ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop26 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop26.png);
+	animation: 1200ms linear 900ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop27 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop27.png);
+	animation: 1200ms linear 925ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop28 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop28.png);
+	animation: 1200ms linear 950ms infinite infiniteLoop;
+}
+
+body.day .animationContainer #Loop29 {
+	opacity: 0;
+	content: url(assets/Day/Loading-Loop29.png);
+	animation: 1200ms linear 975ms infinite infiniteLoop;
+}
+
+}

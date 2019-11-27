@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head class="bghtml">
+    <meta charset="UTF-8">
+    <title>appDrawer</title>
+    <link rel="stylesheet" title="default" href="./components/globalCommon.css" type="text/css">
+    <link rel="stylesheet" title="default" href="./components/scrollbar/scrollbar.css" type="text/css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <style>
+        body
+        {
+            padding: 30px 200px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: flex-start;
+            flex-flow: row nowrap;
+            width: 1920px;
+            height: 720px;
+        }
+        .app_item {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+        }
+
+        .app_icon .logo {
+            display: inline-flex;
+            box-sizing: border-box;
+            height: 72px;
+            width: 72px;
+            border: 3px solid #19A1FF;
+            border-radius: 73px;
+            font-size: 33px;
+            color: #ffffff;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .app_name {
+            height: 75px;
+            color: #B2B2B2;
+            font-size: 20px;
+            letter-spacing: 6px;
+            line-height: 37px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body class="night en">
+<div class="app_item">
+    <div class="app_icon">
+            <span class="logo">
+                P
+            </span>
+    </div>
+    <div class="app_name">
+       PARK
+    </div>
+</div>
+<script>
+    document.querySelector(".app_item").onclick=function () {
+        window.location.href="index_dev.html?language=en-US&theme=night&lanuch=appdrawer"
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+/*
+BEM naming convention for each UI element.
+‘block’ .nav-menu { } or .form { } or .block
+‘element’ .nav-menu__item { } or .form__submit { } or .block__elem { }
+‘modifier’ .nav-menu--blue { } or .form__submit--disabled or .block--hidden { }
+
+Importing Commong UI Elements in the global style sheet - Please only include UI elements which are being used in the app for faster app */
+@import url('common/styles.css');
+/* for all commong styles like background colours, font size, font name etc */
+@import url('button/button.css');
+/* For all BUTTONS Styles for all screen and day/night modes */
+@import url('menubar/menubar.css');
+/* NAVIGATION BAR */
+@import url('navbar/navbar.css');
+/* NAVIGATION BAR */
+@import url('toggleButton/toggleButton.css');
+/* Toggle Button with text only */
+@import url('toggleTripleSwitch/toggleTripleSwitch.css');
+/* Toggle Button with text only */
+@import url('loadingAnimation/loadingAnimation.css');
+/* Loading Animation */
+@import url('loadingAnimation2/loadingAnimation2.css');
+
+/****************************/
+/* screen aspect ratio (8/3)*/
+/*****************************/
+@media (max-aspect-ratio: 8/3) {
+
+    html, body {
+        margin: 0px 0px 0px 0px;
+        font-family: var(--font-button-text-primary-font-family);
+        /*background-color: var(--backgroundColor);*/
+    }
+
+    /* application container including the sidebars*/
+    .body-container {
+        height: 100%;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    body.day {
+        background: url('../images/bg_day.jpg') center/cover no-repeat;
+        overflow: hidden;
+    }
+
+    body.night {
+        background: url('../images/bg_night.jpg') center/cover no-repeat;
+        overflow: hidden;
+    }
+
+    .app-container {
+        /* Application container -  margin: 0px 175px 10px 169px; */
+        /*padding: 5px 5px 5px 10px; */
+        margin-left: var(--app-area-left-margin);
+        margin-right: var(--app-area-right-margin);
+        font-size: 18px;
+        height: var(--six-row-height);
+        width: 1560px;
+        padding-left: 7px;
+        padding-right: 7px;
+        /*width: var(--app-area-no-sidebars);
+       height: var(--five-row-height);
+       margin-left: 173px;*/
+        /* border-style: solid;*/
+        /* border-width: 1px;*/
+        /* border-color: blue;  */
+    }
+
+    .day > .app-container {
+        color: #000000;
+
+    }
+
+    .night > .app-container {
+        color: #FFFFFF;
+    }
+
+    .day > #page-container { /* page view container -  margin: 0px 175px 10px 169px; */
+        width: var(--app-area-no-sidebars);
+        height: var(--six-row-height);
+    }
+
+    #control-panel {
+        position: fixed;
+        border: 2px solid darkgreen;
+        border-radius: 5px;
+        padding: 15px;
+        width: 200px;
+        top: 150px;
+        left: 40%;
+        text-align: center;
+        z-index: 9999;
+    }
+
+    #control-panel > button {
+        border-radius: 2px;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .code-syntax, xmp {
+        font-size: 13px;
+        font-family: "Operator Mono SSm A", "Operator Mono SSm B", 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
+        background: #f1f1f1;
+        text-align: left;
+        width: 100%;
+    }
+
+    .doc-subsection {
+        background-color: #FAF0E6;
+        padding: 5px 5px 5px 5px;
+    }
+
+    h1.doc-heading {
+        font-family: 51px;
+        color: rgb(3, 75, 148);
+    }
+
+    h2.doc-heading {
+        font-family: 51px;
+        color: #930;
+    }
+
+    .doc-navmenu {
+        font-size: 15px;
+        font-family: var(--font-button-text-primary-font-family);
+        float: left;
+        width: 20%;
+    }
+
+    /* TODO - REFACTOR - TO BE REMOVED */
+    .body--Light {
+        background-color: black;
+        border-color: white;
+        color: white;
+    }
+
+    /* TODO - REFACTOR - TO BE REMOVED */
+    .body--Dark {
+        background-color: white;
+        border-color: black;
+        color: black;
+    }
+
+    .backbutton {
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        left: 190px;
+        bottom: 0px;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .backbutton span {
+        display: inline-flex;
+    }
+
+}
+
+/* end of 8/3 aspect ratio*/
+
+/******************************************************/
+/********* aspect ratio (16/9) FOR FUTURE DEV *********/
+/******************************************************/
+@media (max-aspect-ratio: 16/9) {
+    html, body {
+        color: blue; /*if text appears to be blue then its 16/9 aspect ratio*/
+        margin: 0px 0px 0px 0px;
+        font-family: 51px;
+        font-family: var(--font-button-text-primary-font-family);
+        background-color: var(--backgroundColor);
+    }
+
+    #control-panel {
+        position: fixed;
+        border: 1px solid darkgreen;
+        border-radius: 5px;
+        padding: 5px;
+        width: 450px;
+        top: 50px;
+        left: 20%;
+        text-align: center;
+    }
+
+    #control-panel > button {
+        border-radius: 2px;
+        padding: 2px;
+        margin: 2px;
+    }
+
+    #body-container {
+        /* width: var(--app-area-no-sidebars); Width is bigger than the space available */
+        width: 1530px;
+        height: var(--six-row-height);
+        position: fixed;
+
+    }
+
+    .app-container { /* Application container -  margin: 0px 175px 10px 169px; */
+        /*padding: 5px 5px 5px 10px; */
+        margin-left: var(--app-area-left-margin);
+        margin-right: var(--app-area-right-margin);
+        font-size: 18px;
+        background: white;
+        padding: 10px 15px;
+        background-color: #e8e8e8;
+    }
+
+    #page-container { /* page view container -  margin: 0px 175px 10px 169px; */
+        width: var(--app-area-no-sidebars);
+        height: var(--five-row-height);
+    }
+
+    .show {
+        display: block;
+    }
+
+    .hide {
+        display: none;
+    }
+
+}
+::-webkit-scrollbar {
+display: none;
+}
+/* end of 16/9 aspect ratio*/

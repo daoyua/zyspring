@@ -1,0 +1,64 @@
+/* code pen : https://codepen.io/coinoperatedgoi/pen/RMRMYo */
+
+.row {
+    font-family: "TipperaryforJLR-PRC";
+	color:#FFF;
+	text-align:center;	
+	vertical-align: center;
+	background:#0000FF;
+}
+
+.container {
+    font-family: "TipperaryforJLR-PRC";
+	width:24vw;
+	margin:1px auto;
+	border:1px solid #0000FF;
+	border-radius:1px;
+	background:#FFFFFF;
+}
+
+.topRow {
+    border: 1px solid #0000FF;
+    width:2vw;
+}
+
+a {
+    font-family: "TipperaryforJLR-PRC";
+	display:inline-block;
+	border:1px solid #333;
+	border-radius:0px;
+	text-align:center;
+	width:6vw;
+	height:5vw;
+	line-height:4vw;
+	margin:2px;
+	font-size:2vw;
+	text-decoration:none;
+	color:inherit;
+	background:rgba(255,255,255,0.7);
+	transition:all 0.3s ease-in-out;
+	text-align:center;	
+	
+	/*&:active, &:hover {*/
+		/*box-shadow:inset 0 0 2px rgba(0,0,0,1);*/
+	/*}*/
+}
+
+.call {
+	background:green;
+	color:#fff;
+	width:20vw;
+	margin:6%;	
+}
+
+#keypadInput {
+    text-align:center;
+    font-family: "TipperaryforJLR-PRC";
+	background:transparent;
+	width:90%;
+	border:0;
+	outline:none;
+	font-size:25px;
+	margin:25px 0;
+	text-align:center;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head class="bghtml">
+    <meta charset="UTF-8">
+    <title>QA</title>
+    <script type="text/javascript" src="http://cdn.phoenix/phoenix.min.js"></script>
+    <link rel="stylesheet" title="default" href="./components/globalCommon.css" type="text/css">
+    <link rel="stylesheet" title="default" href="./components/testButtom.css" type="text/css">
+    <link rel="stylesheet" title="default" href="./components/scrollbar/scrollbar.css" type="text/css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+<div class="loading_bg">
+
+</div>
+<div id="index_page_loading" class="spinner" style="display: none"></div>
+<div class="spinner__title" id="index_page_loading_text" style="display: none" data-translate="common.loading_text"></div>
+
+
+<!--&lt;!&ndash;loading map start&ndash;&gt;-->
+<!--<div id="des_nearby_img_load_bg" style="display: none">-->
+    <!--<div id="des_nearby_img_load" class="spinner"></div>-->
+    <!--<div id="img_load_text" data-translate="search.img_loading"></div>-->
+<!--</div>-->
+
+<!--<div id="img_load_error_bg"  style="display: none">-->
+    <!--<div id="img_load_error_btn" class="iconfont Icon_Close_NightMode"></div>-->
+    <!--<div id="img_load_error_text"  data-translate="search.img_loading_error"></div>-->
+<!--</div>-->
+<!--&lt;!&ndash;loading map end&ndash;&gt;-->
+
+<!-- 菜单 -->
+<nav id="menu-bar" class="jlr_menu">
+    <div class="item_group">
+        <div class="" id="menuBarButtonOne">
+            <span data-translate="nav.find"></span>
+        </div>
+        <div class="" id="menuBarButtonTwo">
+            <span data-translate="nav.nowpark"></span>
+        </div>
+        <div class="" id="menuBarButtonThree">
+            <span data-translate="nav.orderhistory"></span>
+        </div>
+    </div>
+</nav>
+
+<!--测试按钮弹框 start-->
+<div id="bullet-box" class="bullet-box" style="display: none;">
+    <div id="btn-list">
+        <div id="un-bind" class="set-but">
+            <button>车辆解绑</button>
+        </div>
+        <div id="look-csdk" class="set-but">
+            <button>查看CSDK</button>
+        </div>
+        <div id="set-car-location" class="set-but">
+            <button>设置天安门为车辆位置</button>
+        </div>
+        <div id="clear-car-location" class="set-but">
+            <button>清空当前车辆位置</button>
+        </div>
+        <div id="get-car-location" class="set-but">
+            <button>获取当前车辆位置</button>
+        </div>
+        <div id="set-phone-number" class="set-but">
+            <button>设置手机号</button>
+        </div>
+    </div>
+    <div id="return-info">
+        <div id="set-input" style="display: none">
+            <!--<input type="text" id="set-number" name="phoneNumber" placeholder="请输入" value="">-->
+            <div id="set-number"></div>
+        </div>
+        <div id="txt-list"></div>
+        <div id="result-info"></div>
+    </div>
+
+    <div id="bullet-box-close">
+        <span class="icon iconfont Icon_Close_NightMode"></span>
+    </div>
+</div>
+<!--测试按钮弹框 end-->
+
+<script src="./modules/page.js"></script>
+<script src="./js/error.js"></script>
+<script src="./js/notify.js"></script>
+<script src="./js/api.js"></script>
+<script src="./js/router.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/listener.js"></script>
+<script src="./js/onintents.js"></script>
+<script src="./js/init.js"></script>
+<script src="./js/testbutton.js"></script>
+</body>
+</html>

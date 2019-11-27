@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:p="http://www.springframework.org/schema/p"
+
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean  id="user" class="com.springtest.zy.spring.UserImpement"></bean>
+<bean  id="user" class="com.springtest.zy.spring.UserImpement" init-method="haha" scope="prototype">
+    <!--<constructor-arg name="name" value="aaaaaaaa"/>-->
+    <constructor-arg index="0" value="#{'ssfsefs'}"/>
+    <constructor-arg index="1" value="#{33}"/>
+</bean>
+    <!--<bean  name="user1" class="com.springtest.zy.spring.UserImpement1" init-method="haha" scope="prototype">-->
+      <!--<property name="age" value="12"></property>-->
+        <!--<property name="name" value="sss"></property>-->
+        <!--<property name="userImpement" ref="user"></property>-->
+    <!--</bean>-->
+    <bean  name="user1" class="com.springtest.zy.spring.UserImpement1" init-method="haha" scope="prototype"
+    p:age="12" p:name="aaa" p:userImpement="#{user}">
+    <!--p:age="12" p:name="aaa" p:userImpement-ref="user">-->
+
+    </bean>
 </beans>

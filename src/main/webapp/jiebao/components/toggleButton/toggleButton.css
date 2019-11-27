@@ -1,0 +1,160 @@
+@media (max-aspect-ratio: 8/3) { 
+
+.toggle-button {
+    display: inline-block;
+    height: var(--one-row-height);
+    width: var(--three-column-width);
+}
+
+.toggle-button__label {
+    position: relative;
+    float: left;
+    width: 179px; /* To stay close to spec, we're going with the equivalent of 1.5 column width */
+    height: var(--one-row-height);
+    line-height: var(--one-row-height);
+    font-size:  var(--primary-button-font-size);
+    color: #b3b3b3;
+    text-align: center;
+}
+
+.toggle-button__label:active {
+    font-weight: bold;
+}
+
+.toggle-button__input {
+    display: none;
+}
+
+.toggle-button__input:checked + .toggle-button__label {
+    font-weight: bold;
+    color: #A38361;  ;
+}
+
+.toggle-button__divider {
+    float: left;
+    border-left: 2px solid #b3b3b3;
+    height: 30px;
+    margin: 45px 0;
+}
+
+/* Selected underline + animation */
+
+.toggle-button__label--selectedUnderline {
+    height: 3px;
+    margin: 0px 60px;
+  	transition: margin 250ms linear, visibility 250ms linear;
+  	visibility: hidden;
+}
+
+.toggle-button__input:checked + .toggle-button__label .toggle-button__label--selectedUnderline {
+	margin: 0px 24px;
+	visibility: visible;
+}
+
+/* Day Mode Toggle Switch */
+
+body.day .toggle-button .toggle-button__input:checked + .toggle-button__label {
+    color: #8C6339;
+}
+
+body.day .toggle-button .toggle-button__label--selectedUnderline {
+    color: #8C6339;
+}
+
+body.day .toggle-button .toggle-button__input:checked + .toggle-button__label .toggle-button__label--selectedUnderline {
+    background-color: #8C6339;
+}
+
+/* Night Mode Toggle Switch */
+
+body.night .toggle-button .toggle-button__input:checked + .toggle-button__label {
+    color: #FFC999;
+}
+
+body.night .toggle-button .toggle-button__label--selectedUnderline {
+    color: #FFC999;
+}
+
+body.night .toggle-button .toggle-button__input:checked + .toggle-button__label .toggle-button__label--selectedUnderline {
+    background-color: #FFC999;
+}
+
+/* These styles are strictly for the example page, so that the background looks light or dark. */
+
+body.day .toggle-button__example {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--three-row-height);
+    width: var(--six-column-width);
+    background-color: #e8e8e8;
+}
+
+body.night .toggle-button__example {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--three-row-height);
+    width: var(--six-column-width);
+    background-color: #1c1c1c;
+}
+
+/* Example page views for Toggle Button demo */
+
+#body-container {
+    position: relative !important;
+}
+
+#documentation-container {
+    width: var(--thirteen-column-width);
+    margin: 40px 100px 0 100px;
+}
+
+#documentation-container #body-container {
+    margin: 0 auto !important;
+}
+
+#forecast-container {
+    position: absolute;
+    top: var(--one-row-height);
+    height: var(--four-row-height);
+    width: inherit;
+}
+
+#forecastHours, #forecastDays {
+    height: inherit;
+    width: inherit;
+}
+
+#forecastHours {
+    background-color: white;
+    opacity: 0.2;
+}
+
+#forecastDays {
+    background-color: white;
+    opacity: 0.2;
+}
+
+.toggle-button__demoContainer .toggle-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#forecast-container h1 {
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    line-height: var(--four-row-height);
+}
+
+h2 {
+    margin: 40px 0 20px 0;
+}
+
+p {
+    margin-bottom: 60px;
+}
+
+}

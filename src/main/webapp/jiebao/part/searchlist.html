@@ -1,0 +1,419 @@
+<body>
+<style type="text/css" id="searchlist_style">
+    p {
+        margin: 0;
+        padding-bottom: 0;
+    }
+
+    #searchlist .app-container {
+        overflow: hidden;
+    }
+
+    #searchlist .body-container {
+        /*display: flex;*/
+        display: none;
+        flex: 1 auto;
+        width: 1560px;
+        padding-left: 30px;
+    }
+
+    #searchlist .left-contents {
+        width: 867px;
+        height: 600px;
+        padding-top: 15px;
+    }
+
+    #searchlist .toggle-triple-switch label {
+        float: left;
+        box-sizing: border-box;
+        width: 432px;
+        height: 90px;
+        line-height: 90px;
+    }
+
+    #searchlist .data-list {
+        height: 465px;
+        margin-top: 30px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    #searchlist .data-item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        height: 116px;
+        background-color: transparent;
+        color: #fff;
+        border-top: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #searchlist .data-item:first-child {
+        width: 105px;
+        border-top: none;
+        padding-top: 0;
+    }
+
+    #searchlist .data-item .line-one {
+        display: block;
+        font-size: 36px;
+        width: 687px;
+        height: 103px;
+        padding: 12px 0 0 30px;
+    }
+
+    #searchlist.night .data-item .name {
+        display: inline-block;
+        width: 687px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 42px;
+        color: #FFFFFF;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    #searchlist .data-item .line-one .status {
+        display: inline-block;
+        width: 182px;
+        height: 40px;
+        font-size: 36px;
+        font-family: TipperaryforJLR;
+        font-weight: normal;
+        line-height: 40px;
+        text-align: left;
+    }
+
+    #searchlist .line-one .status .state_free {
+        color: #49C477;
+    }
+
+    #searchlist .line-one .status .state_full {
+        color: #FF4D4D;
+    }
+
+    #searchlist .line-one .status .state_tight {
+        color: #F5A623;
+    }
+
+    #searchlist .data-item .line-two {
+        display: block;
+        height: 105px;
+        padding-top: 12px;
+        font-size: 36px;
+        color: #B2B2B2;
+    }
+
+    #searchlist .data-item .line-two::before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100px;
+        background: #b2b2b2;
+        opacity: 0.6;
+        bottom: 9px;
+    }
+
+    #searchlist .price {
+        display: inline-block;
+        width: 238px;
+        height: 40px;
+        font-size: 36px;
+        font-family: TipperaryforJLR;
+        font-weight: normal;
+        line-height: 40px;
+        padding-left: 40px;
+    }
+
+    #searchlist .line-two .route {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 124px;
+        line-height: 50px;
+        text-align: center;
+        padding-left: 13px;
+        color: #fff;
+        font-size: 42px;
+    }
+
+    #searchlist .line-two .distance {
+        display: inline-block;
+        width: 148px;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    #searchlist .nodata-wrapper {
+        box-sizing: border-box;
+        height: 120px;
+        width: 867px;
+        border: 2px solid #B2B2B2;
+        border-radius: 1px;
+        background-color: rgba(0, 0, 0, 0);
+        color: #FFFFFF;
+        margin: 0;
+    }
+
+    #searchlist .right-contents {
+        width: 581px;
+        height: 588px;
+        padding-top: 12px;
+        margin-left: 32px;
+    }
+
+    #searchlist.day .no-park {
+        width: 867px;
+        height: 100px;
+        opacity: 1;
+        font-size: 42px;
+        font-family: TipperaryforJLR;
+        color: rgba(0, 0, 0, 1);
+        line-height: 100px;
+        letter-spacing: 0px;
+        text-align: center;
+        padding-top: 145px;
+        padding-bottom: 130px;
+    }
+
+    #searchlist.day .data-item .line-one .name,
+    #searchlist.day .line-one .price,
+    #searchlist.day .line-two .route,
+    #searchlist.day .line-two .distance {
+        color: #000000;
+    }
+
+    #searchlist.night .no-park {
+        width: 867px;
+        height: 100px;
+        opacity: 1;
+        font-size: 42px;
+        font-family: TipperaryforJLR;
+        color: rgba(0, 0, 0, 1);
+        line-height: 100px;
+        letter-spacing: 0px;
+        text-align: center;
+        padding-top: 145px;
+        padding-bottom: 130px;
+        color: #fff;
+    }
+
+    #searchlist #nodata {
+        display: none;
+    }
+
+    #searchlist #destination_nodata {
+        display: none;
+    }
+
+    @media (max-aspect-ratio: 8/3) {
+        body.night.en .menu-bar .menu-bar__button.--selected .menu-bar_button--selectedUnderline {
+            margin-top: 2.5px;
+        }
+
+        .menu-bar__button.--selected .menu-bar_button--selectedUnderline, .menu-bar_button--selectedUnderline {
+            margin: 0;
+        }
+
+        li:first-of-type .menu-bar__button {
+            padding-right: 0;
+        }
+
+        li:last-of-type .menu-bar__button {
+            padding-left: 0;
+        }
+
+        .menu-bar__button {
+            padding: 0 100px 0 100px;
+        }
+
+        body.night .toggle-triple-switch .toggle-triple-switch__label {
+            color: #FFFFFF;
+            border-color: #B2B2B2;
+            border-width: 2px;
+        }
+
+        body.night .toggle-triple-switch .toggle-triple-switch__input:checked + .toggle-triple-switch__label {
+            border-width: 0;
+        }
+    }
+
+    #searchlist.night .spinner {
+        z-index: 3;
+    }
+
+    #searchlist.night .spinner__title {
+        width: 1440px;
+        height: 50px;
+        font-size: 42px;
+        font-weight: normal;
+        color: rgba(255, 255, 255, 1);
+        line-height: 50px;
+        position: absolute;
+        text-align: center;
+        top: 515px;
+        left: 240px;
+        justify-content: center;
+        z-index: 3;
+    }
+
+    #searchlist.day .spinner__title {
+        width: 1440px;
+        height: 50px;
+        font-size: 42px;
+        font-family: TipperaryforJLR-PRC;
+        font-weight: normal;
+        color: rgba(0, 0, 0, 1);
+        line-height: 50px;
+        position: absolute;
+        text-align: center;
+        top: 515px;
+        left: 240px;
+        z-index: 3;
+    }
+
+    .spinner__title {
+        display: block;
+
+    }
+
+    #loadingAnimationContainer {
+        display: block;
+    }
+
+    #searchlist.day .nodata-wrapper {
+        border: 2px solid #1c1c1c;
+        color: #333;
+    }
+
+    #searchlist.night .nodata-wrapper {
+        border: 2px solid #B2B2B2;
+        color: #FFFFFF;
+    }
+
+    #searchlist .nodata-wrapper:active {
+        color: #D1A57D;
+        border: 2px solid #D1A57D;
+    }
+
+    #menu-bar {
+        display: none;
+    }
+
+    /* 选中状态颜色左侧*/
+    /*    #searchlist .data-item .line-one.active .parkname{
+            color: #D1A57D;
+        }
+        #searchlist .data-item .line-one.active .price{
+            color: #D1A57D;
+        }*/
+    /* 选中状态颜色右侧*/
+    /*    #searchlist .data-item .line-two.active .route{
+            color: #D1A57D
+        }
+        #searchlist .data-item .line-two.active .distance{
+            color: #D1A57D;
+        }*/
+    /* 背景色*/
+    /*    #searchlist .data-item .line-one.active {
+          margin-left: -30px;
+          margin-top: -15px;
+          padding-top: 15px;
+          padding-left: 30px;
+          background:rgba(156,156,156,0.1)
+        }*/
+    /*    #searchlist .data-item .line-two.active {
+          margin-top: -15px;
+          padding-top: 15px;
+          background:rgba(156,156,156,0.1)
+        }*/
+
+    #searchlist .data-item .line-one:active {
+        background: rgba(156, 156, 156, 0.1);
+    }
+
+    #searchlist .data-item .line-one:active .name,
+    #searchlist .data-item .line-one:active .price {
+        color: #D1A57D;
+    }
+
+    #searchlist .data-item .line-two:active {
+        background: rgba(156, 156, 156, 0.1);
+    }
+
+    #searchlist .data-item .line-two:active .route,
+    #searchlist .data-item .line-two:active .distance {
+        color: #D1A57D;
+    }
+
+    #set-now, #try-again {
+        outline: none;
+    }
+
+    #searchlist .searchlist_loading_bg {
+        position: fixed;
+        z-index: 3;
+        width: 1920px;
+        height: 720px;
+        opacity: 0.8;
+        background: #000000;
+        display: none;
+    }
+    #searchlist #destination_nopark{
+        display: none;
+    }
+
+</style>
+<div class="body-container" id="searchlist_content">
+    <div class="left-contents">
+        <div class="tab_btn">
+            <div class="toggle-triple-switch">
+                <input type="radio" class="toggle-triple-switch__input" id="rsvp-going" name="switch-ex1" value="nearby"
+                       checked/>
+                <label data-translate="search.nearby" for="rsvp-going" class="toggle-triple-switch__label">附近</label>
+                <input type="radio" class="toggle-triple-switch__input" id="rsvp-maybe" name="switch-ex1"
+                       value="distination"/>
+                <label data-translate="search.nearbydest" for="rsvp-maybe"
+                       class="toggle-triple-switch__label">目的地附近</label>
+            </div>
+        </div>
+        <!-- 停车场列表 -->
+        <div class="data-list" id="list" style="display: none;"></div>
+        <div class="data-list" id="dest_list" style="display: none;"></div>
+        <!--  附近无停车场 -->
+        <div id="nodata">
+            <div class="no-park" data-translate="search.nodata">附近暂无可支持线上支付的停车场。</div>
+            <button data-translate="search.try_again" id="try-again" class="btn btn__pressed nodata-wrapper">重新搜索
+            </button>
+        </div>
+        <!--  未设置目的地 -->
+        <div id="destination_nodata">
+            <div data-translate="search.destination_nodata" class="no-park no-destination">Set destination in
+                Navigation
+            </div>
+            <button data-translate="search.set_now" id="set-now" class="btn btn__pressed nodata-wrapper">Set now
+            </button>
+        </div>
+        <!--  目的地无停车场 -->
+        <div id="destination_nopark">
+            <div data-translate="search.destination_nopark" class="no-park no-destination">No Park and Pay results at destination
+            </div>
+            <button data-translate="search.set_nowpark" id="set-now" class="btn btn__pressed nodata-wrapper">Try again
+            </button>
+        </div>
+    </div>
+    <div class="right-contents">
+        <img id="nearby_static_img" width="581" height="588" src="" style="display: none;">
+        <img id="dest_img" width="581" height="588" src="" style="display: none">
+    </div>
+</div>
+
+<div class="searchlist_loading_bg"></div>
+<div id="search_loading" class="spinner" style="display: none"></div>
+<div class="spinner__title" id="searchlist_loading_nearby" style="display: none"
+     data-translate="search.spinner_title_nearyby"></div>
+<div class="spinner__title" id="searchlist_loading_dest" style="display: none"
+     data-translate="search.spinner_title_destination"></div>
+<script class="searchlist_script" src="../modules/SearchListPage.js"></script>
+</body>

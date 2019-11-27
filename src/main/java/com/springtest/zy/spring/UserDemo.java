@@ -11,6 +11,9 @@ public class UserDemo {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("SpringApplication.xml");
         UserImpement user = (UserImpement) applicationContext.getBean("user");
         user.haha();
+
+        UserImpement1 user1 = (UserImpement1) applicationContext.getBean("user1");
+        user1.haha();
     }
 
     ;

@@ -1,0 +1,93 @@
+@media (max-aspect-ratio: 8/3) {
+
+    .toggle-triple-switch {
+        overflow: hidden;
+    }
+
+    .toggle-triple-switch input {
+        position: absolute !important;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        width: 1px;
+        border: 0;
+        overflow: hidden;
+    }
+
+    .toggle-triple-switch label {
+        float: left;
+    }
+
+    .toggle-triple-switch label {
+        display: inline-block;
+        height: 100px;
+        width: 300px;
+        background-color: transparent;
+        font-size:  var(--primary-button-font-size);
+        text-align: center;
+        line-height: 100px;
+        border: 1px solid;
+        -webkit-transition: all 0.1s ease-in-out;
+        transition:         all 0.1s ease-in-out;
+    }
+
+    .toggle-triple-switch label:first-of-type {
+        border-right: none;
+    }
+
+    .toggle-triple-switch label:last-of-type {
+        border-left: none;
+    }
+
+    /* Day Mode Triple Toggle Switch */
+
+    body.day .toggle-triple-switch .toggle-triple-switch__label {
+        color: #000000;
+        border-color: #000000;
+    }
+
+    body.day .toggle-triple-switch .toggle-triple-switch__input:checked + .toggle-triple-switch__label {
+        color: #FFFFFF;
+        background-color: #8C6339;
+        border-color: #8C6339;
+    }
+
+    /* Night Mode Triple Toggle Switch */
+
+    body.night .toggle-triple-switch .toggle-triple-switch__label {
+        color: #FFFFFF;
+        border-color: #B2B2B2
+    }
+
+    body.night .toggle-triple-switch .toggle-triple-switch__input:checked + .toggle-triple-switch__label {
+        color: #000000;
+        background-color: #A38361;
+        border: 1px solid #A38361;
+    }
+
+    /* These styles are strictly for the example page, so that the background looks light or dark. */
+
+    body.day .rsvp-form__example {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: var(--three-row-height);
+        width: var(--twelve-column-width);
+        /*background-color: #e8e8e8;*/
+    }
+
+    body.night .rsvp-form__example {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: var(--three-row-height);
+        width: var(--twelve-column-width);
+        /*background-color: #1c1c1c;*/
+    }
+
+    /* Example page views for Triple Toggle Switch demo */
+
+    #documentation-container {
+        width: var(--thirteen-column-width);
+        margin: 40px 100px 0 100px;
+    }
+}

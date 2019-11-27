@@ -1,0 +1,81 @@
+#bullet-box{
+    position: absolute;
+    width: 1574px;
+    height: 600px;
+    background: rgba(32,38,43,0.95);
+    z-index: 1;
+    margin-top: -59px;
+}
+#bullet-box #btn-list{
+    float: left;
+    width: 600px;
+    overflow-y: scroll;
+    margin-left: 150px;
+    margin-top: 60px;
+    border-right: 1px solid #cca945;
+}
+#bullet-box #txt-list{
+    /*width: 800px;*/
+    /*float: right;*/
+    /*margin-top: 86px;*/
+    /*padding-left: 60px;*/
+}
+#bullet-box #txt-list .unbind-car,
+#bullet-box #txt-list .look-csdk,
+#bullet-box #txt-list .clear-car-location,
+#bullet-box #txt-list .get-car-location,
+#bullet-box #txt-list .set-phone-number,
+#bullet-box #txt-list .set-plate-number,
+#bullet-box #txt-list .set-car-location{
+    width: 450px;
+    height: 100px;
+    text-align: center;
+    border: 1px solid #fff;
+    font-size: 36px;
+    color: #fff;
+    line-height: 100px;
+}
+#bullet-box #set-input, #bullet-box #set-input input{
+    width: 550px;
+    height: 100px;
+    border: 1px solid #fff;
+    background: none;
+    font-size: 42px;
+    color: #fff;
+    margin-bottom: 30px;
+    left: 10px;
+}
+#bullet-box #btn-list .set-but{
+    font-size: 42px;
+    border-bottom: 1px solid #FFFFFF;
+    color: #fff;
+    width: 500px;
+    height: 100px;
+}
+#bullet-box #btn-list .set-but button{
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 42px;
+    width: 500px;
+    height: 100px;
+}
+
+#bullet-box #return-info{
+    width: 800px;
+    float: right;
+    margin-top: 86px;
+    padding-left: 60px;
+}
+#bullet-box #result-info {
+    color: #fff;
+    font-size: 42px;
+}
+#bullet-box #bullet-box-close{
+    position: absolute;
+    left: 0;
+    margin-left: 40px;
+}
+#bullet-box #bullet-box-close .iconfont {
+    font-size: 42px;
+}

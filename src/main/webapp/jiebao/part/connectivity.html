@@ -1,0 +1,106 @@
+<body>
+<style type="text/css" class="connectivity_style">
+    #connectivity .body-container {
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #connectivity .app_name {
+
+    }
+
+    #connectivity .content {
+
+    }
+
+    #connectivity .app_icon {
+        width: 140px;
+        height: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+    }
+
+    #connectivity .app_icon .logo {
+        display: inline-flex;
+        box-sizing: border-box;
+        height: 72px;
+        width: 72px;
+        border: 3px solid #19A1FF;
+        border-radius: 73px;
+        font-size: 33px;
+        color: #ffffff;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #connectivity .app_name {
+        height: 75px;
+        width: 460px;
+        color: #B2B2B2;
+        font-size: 30px;
+        letter-spacing: 6px;
+        line-height: 37px;
+        text-align: center;
+    }
+
+    #connectivity .content {
+        height: 120px;
+        width: 1440px;
+        color: #FFFFFF;
+        font-size: 45px;
+        letter-spacing: 2.81px;
+        line-height: 56px;
+        text-align: center;
+        margin-top: 45px;
+    }
+
+    #connectivity button {
+        margin-top: 40px;
+        height: 120px;
+        width: 560px;
+        border: 2px solid #B2B2B2;
+        border-radius: 1px;
+    }
+    #connectivity button:active {
+        border: 2px solid #A38361;
+        border-radius: 1px;
+        color: #D1A57D;
+    }
+
+    #connectivity.day .app_icon .logo {
+        color: #000000;
+    }
+
+    #connectivity.day .app_name {
+        color: #000000;
+    }
+
+    #connectivity.day .content {
+        color: #000000;
+    }
+</style>
+
+<div class="body-container">
+    <div class="app_icon">
+            <span class="logo">
+                P
+            </span>
+    </div>
+    <div class="app_name">
+        PARK AND PAY
+    </div>
+    <div class="content">
+        To use this feature please enable connectivity
+    </div>
+    <div class="footer">
+        <button class="btn btn__normal" id="reaload">Enable connectivity</button>
+    </div>
+</div>
+
+<script id="connectivity_script" src="../modules/connectivity.js"></script>
+</body>
