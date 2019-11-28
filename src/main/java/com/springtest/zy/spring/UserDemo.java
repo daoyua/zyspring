@@ -23,4 +23,13 @@ public class UserDemo {
         AopTest user = (AopTest) applicationContext.getBean("aopTest");
         user.haha();
     }
+    //注解注入属性，注解注入对象
+    @Test
+    public void testIOC1() {
+
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("SpringApplication.xml");
+        ServicesImplement services = (ServicesImplement) applicationContext.getBean("services");
+        services.haha();
+        applicationContext.close();
+    }
 }
