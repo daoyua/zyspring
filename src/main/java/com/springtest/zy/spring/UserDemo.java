@@ -8,7 +8,7 @@ public class UserDemo {
 
     @Test
     public void testSpring() {
-        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("SpringApplication.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("SpringApplication.xml");
         UserImpement user = (UserImpement) applicationContext.getBean("user");
         user.haha();
 
@@ -16,5 +16,11 @@ public class UserDemo {
         user1.haha();
     }
 
-    ;
+    @Test
+    public void testIOC() {
+
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("SpringApplication.xml");
+        AopTest user = (AopTest) applicationContext.getBean("aopTest");
+        user.haha();
+    }
 }
