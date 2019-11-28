@@ -8,7 +8,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Controller("aaa")
-public class UserImpement3 implements UserInter1 {
+public class UserImpement3 implements UserInter {
     UserImpement userImpement;
 
     public void setUserImpement(UserImpement userImpement) {

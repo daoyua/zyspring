@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 
 @Controller("services")
 public class ServicesImplement implements Services {
-//    @Autowired
+    @Autowired
     @Resource(name = "user")
     public UserImpement userImpement;
     @Autowired
@@ -26,5 +26,6 @@ public class ServicesImplement implements Services {
         userImpement.haha();
         userImpement1.haha();
         userImpement2.haha();
+        userImpement3.haha();
     }
 }
