@@ -6,3 +6,15 @@
 target/
 
 
+
+/.idea/
+/.idea/inspectionProfiles/
+/.idea/sonarlint/
+/.idea/deployment.xml
+/.idea/compiler.xml
+/.idea/misc.xml
+/.idea/vcs.xml
+/.idea/uiDesigner.xml
+/.idea/webServers.xml
+/.idea/workspace.xml
+/.idea/encodings.xml
