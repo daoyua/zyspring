@@ -1,10 +1,17 @@
 package com.springtest.zy.spring;
 
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-public class UserDemo {
+import javax.annotation.Resource;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:SpringApplication.xml")
+public class TestDemo {
 
     @Test
     public void testSpring() {
@@ -30,6 +37,20 @@ public class UserDemo {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("SpringApplication.xml");
         ServicesImplement services = (ServicesImplement) applicationContext.getBean("services");
         services.haha();
+        applicationContext.close();
+    }
+    @Resource(name = "aopTest2")
+    private AopTest2 aopTest2;
+    @Test
+    public void testAop() {
+
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("SpringApplication.xml");
+        AopTest services1 = (AopTest) applicationContext.getBean("aopTest");
+//        AopTest2 services2 = (AopTest2) applicationContext.getBean("aopTest2");
+        services1.haha();
+        aopTest2.haha();
+        aopTest2.huanrao();
+        aopTest2.yichangtest();
         applicationContext.close();
     }
 }

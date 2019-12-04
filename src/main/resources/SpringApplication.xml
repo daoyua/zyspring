@@ -3,10 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
        xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+      xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
 
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
-<bean  id="user" class="com.springtest.zy.spring.UserImpement" init-method="haha" scope="prototype" destroy-method="toString">
+<!-- init-method="haha" -->
+    <bean  id="user" class="com.springtest.zy.spring.UserImpement" scope="prototype" destroy-method="toString">
     <!--<constructor-arg name="name" value="aaaaaaaa"/>-->
     <constructor-arg index="0" value="#{'ssfsefs'}"/>
     <constructor-arg index="1" value="#{33}"/>
@@ -16,13 +18,44 @@
         <!--<property name="name" value="sss"></property>-->
         <!--<property name="userImpement" ref="user"></property>-->
     <!--</bean>-->
-    <bean  name="user1" class="com.springtest.zy.spring.UserImpement1" init-method="haha" scope="prototype"
+    <bean  name="user1" class="com.springtest.zy.spring.UserImpement1"  scope="prototype"
     p:age="12" p:name="aaa" p:userImpement="#{user}">
     <!--p:age="12" p:name="aaa" p:userImpement-ref="user">-->
 
     </bean>
-    <!--开启spirng的ioc的注解扫描-->
-<!--<context:component-scan base-package="com.springtest.zy"/>-->
-<!--类上没有加注解的情况,-->
-    <context:annotation-config></context:annotation-config>
+    <bean name="zengqiang" class="com.springtest.zy.spring.AopZengqiang"></bean>
+    <bean name="aopTest" class="com.springtest.zy.spring.AopTest"></bean>
+    <bean name="aopTest2" class="com.springtest.zy.spring.AopTest2"></bean>
+    <!--开启spirng的ioc的注解扫描
+    ：除了具有上面的功能之外，还具有自动将带有@component,@service,@Repository等注解的对象注册到spring容器中的功能
+    -->
+<context:component-scan base-package="com.springtest.zy"/>
+<!--类上没有加注解的情况,可以使用属性注解@ Resource 、@ PostConstruct、@Antowired
+仅能够在已经在已经注册过的bean上面起作用。对于没有在spring容器中注册的bean，它并不能执行任何操作
+-->
+    <!--<context:annotation-config></context:annotation-config>-->
+
+    <!--aop的z注解配置-->
+
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+    <aop:config proxy-target-class="true">
+        <!--表达式配置增强-->
+        <aop:pointcut id="aopt1" expression="execution(* com.springtest.zy.spring.AopTest.haha(..))"/>
+        <aop:pointcut id="aopt2" expression="execution(* com.springtest.zy.spring.AopTest2.haha(..))"/>
+        <aop:pointcut id="aopt3" expression="execution(* com.springtest.zy.spring.AopTest2.huanrao(..))"/>
+        <aop:pointcut id="aopt4" expression="execution(* com.springtest.zy.spring.AopTest2.yichangtest(..))"/>
+        <!--* *.com.springtest.zy.spring..*.*(..) 所有类的所有方法-->
+        <!--配置切面-->
+        <aop:aspect ref="zengqiang" >
+            <!--前置通知-->
+            <!--<aop:before method="checkpri" pointcut-ref="aopt1"></aop:before>-->
+<aop:before method="checkpri" pointcut-ref="aopt1" arg-names="joinpoint"></aop:before>
+            <aop:after-returning method="wrigtLog" pointcut-ref="aopt2" returning="result"></aop:after-returning>
+            <aop:around method="around" pointcut-ref="aopt3" ></aop:around>
+            <aop:after-throwing method="afterThrowing" pointcut-ref="aopt4" throwing="ex"></aop:after-throwing>
+            <aop:after method="finalmethod" pointcut-ref="aopt4"></aop:after>
+
+        </aop:aspect>
+    </aop:config>
 </beans>
