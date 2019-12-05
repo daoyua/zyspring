@@ -31,9 +31,13 @@ public class AopTest3 {
 
         System.out.println("异常抛出++++++++++++++++++++++++++"+exx.getMessage());
     }
-    @After(value = "execution(* com.springtest.zy.spring.AopTest2.getName(..))")
+    @After(value ="AopTest3.testPointcut()")
     public void  finaltest()   {
 
         System.out.println("最终++++++++++++++++++++++++++");
     }
+    @Pointcut(value = "execution(* com.springtest.zy.spring.AopTest2.getName(..))" )
+   public  void testPointcut(){
+
+   }
 }
