@@ -1,8 +1,7 @@
 package com.springtest.zy.spring;
 
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 @Aspect
@@ -15,11 +14,26 @@ public class AopTest3 {
      return    "hahah:";
     }
 
-  @AfterReturning (value = "execution(* com.springtest.zy.spring.AopTest2.huanrao(..))")
-    public String  houzhizengqian() {
-        System.out.println("后置增强zy");
+  @AfterReturning (value = "execution(* com.springtest.zy.spring.AopTest2.getName(..))",returning = "result")
+    public String  houzhizengqian(Object result) {
+        System.out.println("后置增强zy"+result);
         return    "hahah:";
     }
+    @Around(value = "execution(* com.springtest.zy.spring.AopTest2.getName(..))")
+    public String  huanraotest(ProceedingJoinPoint joinPoint) throws Throwable {
+        System.out.println("环绕q++++++++++++++++++++++++++");
+        Object proceed = joinPoint.proceed();
+        System.out.println("环绕h++++++++++++++++++++++++++");
+        return   proceed.toString();
+    }
+    @AfterThrowing(value = "execution(* com.springtest.zy.spring.AopTest2.getName(..))",throwing = "exx")
+    public void  yichang(Throwable exx)   {
 
+        System.out.println("异常抛出++++++++++++++++++++++++++"+exx.getMessage());
+    }
+    @After(value = "execution(* com.springtest.zy.spring.AopTest2.getName(..))")
+    public void  finaltest()   {
 
+        System.out.println("最终++++++++++++++++++++++++++");
+    }
 }

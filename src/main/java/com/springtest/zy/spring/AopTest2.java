@@ -16,6 +16,7 @@ public class AopTest2   {
     public String name;
 
     public String getName() {
+//        int i =1/0;
         return name;
     }
 

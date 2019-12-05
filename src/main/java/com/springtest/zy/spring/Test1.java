@@ -18,5 +18,6 @@ public class Test1 {
        aopTest2.yichangtest();
        aopTest2.huanrao();
        aopTest2.haha();
+       aopTest2.getName();
    }
 }
