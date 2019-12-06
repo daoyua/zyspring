@@ -35,7 +35,7 @@ public class TestDemo {
     public void testIOC1() {
 
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("SpringApplication.xml");
-        ServicesImplement services = (ServicesImplement) applicationContext.getBean("services");
+        IOCTestImplement services = (IOCTestImplement) applicationContext.getBean("services");
         services.haha();
         applicationContext.close();
     }

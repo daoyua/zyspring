@@ -35,5 +35,6 @@ public class JdbcDemo {
         //创建jdbc
 
         jdbcTemplate.update("insert into account values (null,?,?)", "new", 111);
+
     }
 }
