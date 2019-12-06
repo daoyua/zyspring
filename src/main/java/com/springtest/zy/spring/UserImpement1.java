@@ -2,6 +2,9 @@ package com.springtest.zy.spring;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.security.RunAs;
+
+
 @Component("user1")
 public class UserImpement1 implements UserInter {
     UserImpement userImpement;

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 @Controller("services")
-public class ServicesImplement implements Services {
+public class IOCTestImplement implements Services {
     @Autowired
     @Resource(name = "user")
     public UserImpement userImpement;
