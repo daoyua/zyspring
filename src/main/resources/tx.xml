@@ -10,6 +10,7 @@
 
     <!--配置server-->
     <bean id="accountServer" class="com.springtest.zy.spring.tx.AccountServerImp">
+        <property name="transactionTemplate" ref="transactionTemplate"> </property>
         <property name="accountDao" ref="accountDao"></property>
     </bean>
     <!--配置dao-->
@@ -21,6 +22,7 @@
         <property name="dataSource" ref="dataSource"></property>
     </bean>
         -->
+
 <property name="dataSource" ref="dataSource"></property>
     </bean>
     <!-- 第二种方式通过context标签引入的 -->
@@ -31,6 +33,14 @@
         <property name="username" value="${jdbc.username}"></property>
         <property name="password" value="${jdbc.password}"></property>
     </bean>
-
-
+    <!--1配置平台事务管理器-->
+<bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource"></property>
+</bean>
+    <!--2配置事务管理的模板-->
+    <!--3第三步：在业务层注入事务管理的模板-->
+    <!--4编写事务管理的代码-->
+<bean class="org.springframework.transaction.support.TransactionTemplate" id="transactionTemplate">
+    <property name="transactionManager" ref="dataSourceTransactionManager"></property>
+</bean>
 </beans>

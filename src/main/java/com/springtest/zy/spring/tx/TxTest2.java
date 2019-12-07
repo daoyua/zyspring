@@ -7,15 +7,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 
-@ContextConfiguration("classpath:tx.xml")
+@ContextConfiguration("classpath:tx2.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
-/**
- * 1, 配置事务管理器
- * 2，增强aop
- */
-public class TxTest {
-    @Resource(name = "accountServer")
-    AccountServerImp accountServerImp;
+
+public class TxTest2 {
+    @Resource(name = "accountServer2")
+    AccountServerImp2 accountServerImp;
 
     @Test
     public void testTx() {

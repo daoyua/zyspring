@@ -32,11 +32,10 @@
 <context:component-scan base-package="com.springtest.zy"/>
 <!--类上没有加注解的情况,可以使用属性注解@ Resource 、@ PostConstruct、@Antowired
 仅能够在已经在已经注册过的bean上面起作用。对于没有在spring容器中注册的bean，它并不能执行任何操作
-
 -->
     <!--<context:annotation-config></context:annotation-config>-->
 
-    <!--aop的z注解配置-->
+    <!--aop的xml配置*******************************************************************************8-->
 
     <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
@@ -60,12 +59,12 @@
         </aop:aspect>
     </aop:config>
 
-    <!--**********************jdbc***********
+    <!--**********************jdbc********************************************************************************
       driverManagerDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/test?serverTimezone=UTC");
         driverManagerDataSource.setUsername("root");
         driverManagerDataSource.setPassword("zhouyang");
-    *********-->
+   -->
     <!-- 引入属性文件================================== -->
     <!-- 第一种方式通过一个bean标签引入的（很少） -->
     <!-- 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
