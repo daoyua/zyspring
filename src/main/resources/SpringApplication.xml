@@ -32,6 +32,11 @@
 <context:component-scan base-package="com.springtest.zy"/>
 <!--类上没有加注解的情况,可以使用属性注解@ Resource 、@ PostConstruct、@Antowired
 仅能够在已经在已经注册过的bean上面起作用。对于没有在spring容器中注册的bean，它并不能执行任何操作
+
+（1）< context:annotation-config />：仅能够在已经在已经注册过的bean上面起作用。
+对于没有在spring容器中注册的bean，它并不能执行任何操作。
+（2）< context:component-scan base-package="XX.XX"/> ：除了具有上面的功能之外，
+还具有自动将带有@component,@service,@Repository等注解的对象注册到spring容器中的功能。
 -->
     <!--<context:annotation-config></context:annotation-config>-->
 
