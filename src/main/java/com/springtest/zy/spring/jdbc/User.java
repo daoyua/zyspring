@@ -1,6 +1,8 @@
 package com.springtest.zy.spring.jdbc;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     String name;
     double money;
