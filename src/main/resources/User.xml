@@ -5,8 +5,8 @@
 <mapper namespace="mappertest">
 
 
-<select id="selectUser" resultType="com.springtest.zy.spring.jdbc.User">
-    select * from user where id =3
+<select id="selectUser" resultType="com.springtest.zy.spring.jdbc.User" parameterType="Integer" >
+    select * from account where id =#{v}
 </select>
 
 </mapper>
