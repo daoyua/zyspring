@@ -26,8 +26,12 @@
 
     <mappers>
 
+     <!--<mapper resource="com/springtest/zy/mybatis/User.xml"></mapper>-->
+ <!--<package name="com.springtest.zy.spring.jdbc"></package>-->
      <mapper resource="User.xml"></mapper>
+     <mapper resource="tttt.xml"></mapper>
 
-     <!--<mapper resource="src/mapper/User.xml"></mapper>-->
+        <mapper url="User.xml"></mapper>
+     <mapper resource="OrderDao.xml"></mapper>
     </mappers>
 </configuration>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcast.dao.OrderDao">
+       <resultMap id="withUser2" type="order">
+        <id property="id" column="oid"/>
+        <result property="orderTime" column="ordertime"/>
+        <result property="money" column="money"/>
+           <!--
+           property 封装给order中的那个属性
+           javaType为封装的类型
+           select 为找寻的方法路劲
+           column 为传入的参数
+           -->
+        <association property="user" javaType="domain.User" select="cn.itcast.dao.UserDao.findbyid" column="uid"/>
+
+    </resultMap>
+ <select id="findOrde" resultMap="withUser2" parameterType="int">
+     select * from orders where id = #{id}
+ </select>
+    <select id="findbyorder" resultType="order" parameterType="int">
+        select * from orders where uid = #{uid}
+    </select>
+
+</mapper>

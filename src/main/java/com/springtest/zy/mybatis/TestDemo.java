@@ -13,7 +13,7 @@ package com.springtest.zy.mybatis;
 public class TestDemo {
     @Test
     public void test() throws IOException {
-            String resou="mapper/sqlMapConfig.xml";
+            String resou="sqlMapConfig.xml";
         InputStream resourceAsStream = Resources.getResourceAsStream(resou);
         //创建session工厂
 
