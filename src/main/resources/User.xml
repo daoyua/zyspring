@@ -2,11 +2,18 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mappertest">
+<mapper namespace="test">
 
 
-<select id="selectUser" resultType="com.springtest.zy.spring.jdbc.User" parameterType="Integer" >
+<select id="selectUser" resultType="com.springtest.zy.spring.jdbc.User">
     select * from account where id =#{v}
 </select>
+    <select id="selectUserName" resultType="com.springtest.zy.spring.jdbc.User">
+--     select * from account where name like '%${v}%'
+    select * from account where name like "%"#{v}"%"
+</select>
 
+    <insert id="addUser" parameterType="com.springtest.zy.spring.jdbc.User">
+insert into account (name, money) values (#{name},#{money})
+</insert>
 </mapper>

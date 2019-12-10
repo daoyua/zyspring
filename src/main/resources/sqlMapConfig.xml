@@ -25,13 +25,9 @@
     </environments>
 
     <mappers>
-
-     <!--<mapper resource="com/springtest/zy/mybatis/User.xml"></mapper>-->
- <!--<package name="com.springtest.zy.spring.jdbc"></package>-->
-     <mapper resource="User.xml"></mapper>
-     <mapper resource="tttt.xml"></mapper>
-
-        <mapper url="User.xml"></mapper>
-     <mapper resource="OrderDao.xml"></mapper>
+     <!--<mapper resource="com/springtest/zy/mybatis/user.xml"></mapper>-->
+     <mapper resource="mapper/user.xml"></mapper>
+     <!--<mapper resource="classpath:user.xml"></mapper>-->
+        <!--<package name="com.springtest.zy.mybatis"></package>-->
     </mappers>
 </configuration>
