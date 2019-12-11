@@ -3,12 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+<!--<properties resource="../jdbc.properties"></properties>-->
+<properties resource="jdbc.properties"></properties>
 
     <settings>
         <!--当返回行的所有列都是空时，MyBatis默认返回null-->
         <setting name="returnInstanceForEmptyRow" value="true"/>
     </settings>
-
+    <typeAliases>
+        <!--<typeAlias type="com.springtest.zy.spring.jdbc.User" alias="User"></typeAlias>-->
+        <!--不分大小写-->
+        <package name="com.springtest.zy.spring.jdbc"></package>
+    </typeAliases>
     <environments default="development">
 
         <environment id="development">
@@ -16,18 +22,21 @@
             <transactionManager type="JDBC"/>
             <!--使用数据池，复用实例-->
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8"/>
-                <property name="username" value="root"/>
-                <property name="password" value="zhouyang"/>
+                <!--<property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+                <property name="driver" value="${jdbc.driverClassName}"/>
+                <!--<property name="url" value="jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8"/>-->
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
 
     <mappers>
-     <!--<mapper resource="com/springtest/zy/mybatis/user.xml"></mapper>-->
-     <mapper resource="mapper/user.xml"></mapper>
-     <!--<mapper resource="classpath:user.xml"></mapper>-->
-        <!--<package name="com.springtest.zy.mybatis"></package>-->
+     <!--<mapper resource="mapper/user.xml"></mapper>-->
+        <!--必须包名和文件名一致-->
+     <mapper class="com.springtest.zy.mybatis.mapper.UserDao"></mapper>
+
+    <!--<package name="com.springtest.zy.mybatis.mapper"></package>-->
     </mappers>
 </configuration>

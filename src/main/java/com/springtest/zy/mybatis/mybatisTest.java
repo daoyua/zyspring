@@ -1,5 +1,6 @@
 package com.springtest.zy.mybatis;
 
+import com.springtest.zy.mybatis.mapper.UserDao;
 import com.springtest.zy.spring.jdbc.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -22,10 +23,10 @@ public class mybatisTest {
 //        List<User> o  = sqlSession.selectList("test.selectUserName", "z");
 //        System.out.println(o.toString());
 //        添加用户
-        User user=new User();
-        user.setMoney(10000);
-        user.setName("updatesTest");
-        user.setId(10);
+//        User user=new User();
+//        user.setMoney(10000);
+//        user.setName("updatesTest");
+//        user.setId(10);
 //        int o = sqlSession.insert("test.addUser", user);
 //        sqlSession.commit();
 //
@@ -34,10 +35,14 @@ public class mybatisTest {
 //        int o = sqlSession.update("test.updateUser", user);
 
        //删除
-        int delete = sqlSession.delete("test.deleteUser",9);
-
+//        int delete = sqlSession.delete("test.deleteUser",9);
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User user1 = mapper.selectUser(3);
         sqlSession.commit();
-        System.out.println(delete);
+        System.out.println(user1.toString());
+
+        List<User> z = mapper.selectUserName("z");
+        System.out.println(z.toArray().toString());
 //        System.out.println(user.getId());
 
 
