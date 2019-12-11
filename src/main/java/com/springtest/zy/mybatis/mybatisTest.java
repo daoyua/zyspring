@@ -23,12 +23,23 @@ public class mybatisTest {
 //        System.out.println(o.toString());
 //        添加用户
         User user=new User();
-        user.setMoney(333);
-        user.setName("zyzyzyzy");
-        int o = sqlSession.insert("test.addUser", user);
-        sqlSession.commit();
+        user.setMoney(10000);
+        user.setName("updatesTest");
+        user.setId(10);
+//        int o = sqlSession.insert("test.addUser", user);
+//        sqlSession.commit();
+//
+//        System.out.println(user.getId());
+        //修改
+//        int o = sqlSession.update("test.updateUser", user);
 
-        System.out.println(o+"");
+       //删除
+        int delete = sqlSession.delete("test.deleteUser",9);
+
+        sqlSession.commit();
+        System.out.println(delete);
+//        System.out.println(user.getId());
+
 
     }
 }

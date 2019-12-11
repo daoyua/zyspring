@@ -14,6 +14,16 @@
 </select>
 
     <insert id="addUser" parameterType="com.springtest.zy.spring.jdbc.User">
+<selectKey keyProperty="id" resultType="Integer" order="AFTER">
+    select Last_insert_id()
+</selectKey>
 insert into account (name, money) values (#{name},#{money})
 </insert>
+    <update id="updateUser" parameterType="com.springtest.zy.spring.jdbc.User">
+update account set name=#{name},money=#{money} where id =#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="Integer">
+        delete from account where id =#{v}
+    </delete>
 </mapper>
