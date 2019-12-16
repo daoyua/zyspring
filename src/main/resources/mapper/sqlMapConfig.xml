@@ -35,8 +35,8 @@
     <mappers>
      <!--<mapper resource="mapper/user.xml"></mapper>-->
         <!--必须包名和文件名一致-->
-     <mapper class="com.springtest.zy.mybatis.mapper.UserDao"></mapper>
+     <!--<mapper class="com.springtest.zy.mybatis.mapper.UserDao"></mapper>-->
 
-    <!--<package name="com.springtest.zy.mybatis.mapper"></package>-->
+    <package name="com.springtest.zy.mybatis.mapper"></package>
     </mappers>
 </configuration>
