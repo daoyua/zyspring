@@ -3,13 +3,15 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.springtest.zy.mybatis.mapper.UserDao">
-<!--//遵循四个原则
-	//接口 方法名  == UserDao.xml 中 id 名
-	//返回值类型  与  Mapper.xml文件中返回值类型要一致
-	//方法的入参类型 与Mapper.xml中入参的类型要一致
-	//命名空间 绑定此接口 dao层接口-->
-
-<select id="selectUser" resultType="User" parameterType="integer">
+    <!--//遵循四个原则
+        //接口 方法名  == UserDao.xml 中 id 名
+        //返回值类型  与  Mapper.xml文件中返回值类型要一致
+        //方法的入参类型 与Mapper.xml中入参的类型要一致
+        //命名空间 绑定此接口 dao层接口-->
+<sql id="selector">
+     select * from account
+</sql>
+    <select id="selectUser" resultType="User" parameterType="integer">
     select * from account where id =#{v}
 </select>
     <select id="selectUserName" resultType="User">
@@ -18,12 +20,12 @@
 </select>
 
     <insert id="addUser" parameterType="User">
-<selectKey keyProperty="id" resultType="Integer" order="AFTER">
-    select Last_insert_id()
-</selectKey>
-insert into account (name, money) values (#{name},#{money})
--- insert into account (name, money) values (#{user.name},#{user.money})
-</insert>
+        <selectKey keyProperty="id" resultType="Integer" order="AFTER">
+            select Last_insert_id()
+        </selectKey>
+        insert into account (name, money) values (#{name},#{money})
+        -- insert into account (name, money) values (#{user.name},#{user.money})
+    </insert>
     <update id="updateUser" parameterType="User">
 update account set name=#{name},money=#{money} where id =#{id}
     </update>
@@ -31,4 +33,28 @@ update account set name=#{name},money=#{money} where id =#{id}
     <delete id="deleteUser" parameterType="Integer">
         delete from account where id =#{v}
     </delete>
+
+    <select id="selectUserBySex" parameterType="User" resultType="User">
+        select * from account
+        <where>
+        <if test="sex!=null and sex!=''">
+            sex= #{sex}
+        </if>
+        <if test="name!=null and name!=''">
+            and name =#{name}
+        </if>
+        </where>
+    </select>
+
+    <select id="selectUserListByIDS" resultType="User" parameterType="User">
+        select * from account
+        <!--<include refid="selector"/>-->
+<where>
+--     id in 1,2,3   ids是括号里面参数名字  直接数组就叫array
+-- 集合就叫list
+    <foreach collection="ids" item="id" separator="," open="id in(" close=")">
+        #{id}
+    </foreach>
+</where>
+    </select>
 </mapper>

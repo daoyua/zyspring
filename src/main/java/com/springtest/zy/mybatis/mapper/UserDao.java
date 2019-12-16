@@ -8,4 +8,8 @@ public interface UserDao {
 
    public User selectUser(Integer id);
    public List<User> selectUserName(String name);
+
+   //根据姓名和性别查询用户
+   public List<User> selectUserBySex(User user);
+   public List<User> selectUserListByIDS(User user);
 }

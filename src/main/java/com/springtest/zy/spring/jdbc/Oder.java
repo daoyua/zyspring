@@ -3,13 +3,23 @@ package com.springtest.zy.spring.jdbc;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class User implements Serializable {
+public class Oder implements Serializable {
 
     String name;
     String sex;
     double money;
     int id;
-ArrayList<Integer> ids;
+    User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    ArrayList<Integer> ids;
 
     public ArrayList<Integer> getIds() {
         return ids;

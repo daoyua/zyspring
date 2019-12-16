@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 public class mybatisTest {
@@ -36,15 +37,34 @@ public class mybatisTest {
 
        //删除
 //        int delete = sqlSession.delete("test.deleteUser",9);
-        UserDao mapper = sqlSession.getMapper(UserDao.class);
-        User user1 = mapper.selectUser(3);
-        sqlSession.commit();
-        System.out.println(user1.toString());
-
-        List<User> z = mapper.selectUserName("z");
-        System.out.println(z.toArray().toString());
+//        UserDao mapper = sqlSession.getMapper(UserDao.class);
+//        User user1 = mapper.selectUser(3);
+//        sqlSession.commit();
+//        System.out.println(user1.toString());
+//
+//        List<User> z = mapper.selectUserName("z");
+//        System.out.println(z.toArray().toString());
 //        System.out.println(user.getId());
 
 
+        //根据性别和姓名查询
+//        UserDao mapper = sqlSession.getMapper(UserDao.class);
+//        User user1 =new User();
+//        user1.setName("zzz");
+////        user1.setSex("n");
+//        List<User> users = mapper.selectUserBySex(user1);
+//        System.out.println(users.size()+"");
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User user1 =new User();
+        user1.setName("zzz");
+        ArrayList aa=new ArrayList();
+        aa.add("1");
+        aa.add("2");
+        aa.add("3");
+        aa.add("4");
+        user1.setIds(aa);
+//        user1.setSex("n");
+        List<User> users = mapper.selectUserListByIDS(user1);
+        System.out.println(users.size()+"");
     }
 }
