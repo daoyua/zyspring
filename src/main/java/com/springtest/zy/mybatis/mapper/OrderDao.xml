@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springtest.zy.mybatis.mapper.OrderDao">
+    <!--//遵循四个原则
+        //接口 方法名  == UserDao.xml 中 id 名
+        //返回值类型  与  Mapper.xml文件中返回值类型要一致
+        //方法的入参类型 与Mapper.xml中入参的类型要一致
+        //命名空间 绑定此接口 dao层接口-->
+    <resultMap id="Orders" type="com.springtest.zy.spring.jdbc.Oder">
+        <!--<id property="id" column="id"></id>-->
+        <!--<result property="user_id" column="userid"></result>-->
+        <!--<result property="number" column="number"></result>-->
+    </resultMap>
+    <select id="selectOrderList" resultMap="Orders">
+   SELECT id,user_id,number FROM orders;
+</select>
+
+    <!--一对一映射查询-->
+    <resultMap id="orderu" type="Oder">
+        <result column="number" property="number"></result>
+        <result column="id" property="id"></result>
+        <result column="user_id" property="user_id"></result>
+        <association property="user" javaType="User">
+            <result column="money" property="money"></result>
+            <result column="id" property="id"></result>
+            <result column="name" property="name"></result>
+        </association>
+    </resultMap>
+    <select id="selectAccountByOrder" resultMap="orderu">
+       SELECT a.id,
+        a.name,
+        a.money,
+        o.number,
+        o.user_id
+        from  orders o
+        LEFT JOIN account a
+        on a.id=o.user_id
+    </select>
+<resultMap id="userss" type="User">
+    <result column="money" property="money"></result>
+    <result column="id" property="id"></result>
+    <result column="name" property="name"></result>
+    <collection property="oders" ofType="Oder">
+        <result column="number" property="number"></result>
+        <result column="id" property="id"></result>
+        <result column="user_id" property="user_id"></result>
+    </collection>
+</resultMap>
+    <select id="selectUsers" resultMap="userss">
+        SELECT a.id,
+        a.name,
+        a.money,
+        o.number,
+        o.user_id
+        from  account a
+        LEFT JOIN orders o
+        on a.id=o.user_id
+    </select>
+</mapper>

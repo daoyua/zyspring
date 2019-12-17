@@ -9,7 +9,17 @@ public class User implements Serializable {
     String sex;
     double money;
     int id;
-ArrayList<Integer> ids;
+    ArrayList<Oder> oders;
+
+    public ArrayList<Oder> getOders() {
+        return oders;
+    }
+
+    public void setOders(ArrayList<Oder> oders) {
+        this.oders = oders;
+    }
+
+    ArrayList<Integer> ids;
 
     public ArrayList<Integer> getIds() {
         return ids;
@@ -56,8 +66,11 @@ ArrayList<Integer> ids;
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
                 ", money=" + money +
                 ", id=" + id +
+                ", oders=" + oders +
+                ", ids=" + ids +
                 '}';
     }
 }

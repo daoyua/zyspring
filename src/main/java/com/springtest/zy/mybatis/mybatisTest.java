@@ -1,6 +1,8 @@
 package com.springtest.zy.mybatis;
 
+import com.springtest.zy.mybatis.mapper.OrderDao;
 import com.springtest.zy.mybatis.mapper.UserDao;
+import com.springtest.zy.spring.jdbc.Oder;
 import com.springtest.zy.spring.jdbc.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -66,5 +68,50 @@ public class mybatisTest {
 //        user1.setSex("n");
         List<User> users = mapper.selectUserListByIDS(user1);
         System.out.println(users.size()+"");
+    }
+//resultmap
+    @Test
+    public void test2() throws IOException {
+        SqlSession sqlSession =init();
+        OrderDao mapper = sqlSession.getMapper(OrderDao.class);
+        List<Oder> oders = mapper.selectOrderList();
+        for (Oder o:
+                oders) {
+            System.out.println(o.toString());
+        }
+        System.out.println(oders.size()+"");
+    }
+//一对一映射
+    @Test
+    public void test3() throws IOException {
+        SqlSession sqlSession = init();
+        OrderDao mapper = sqlSession.getMapper(OrderDao.class);
+        List<Oder> oders = mapper.selectAccountByOrder();
+        for (Oder o:
+                oders) {
+            System.out.println(o.toString());
+        }
+        System.out.println(oders.size()+"");
+    }
+
+
+    //一对多映射
+    @Test
+    public void test4() throws IOException {
+        SqlSession sqlSession = init();
+        OrderDao mapper = sqlSession.getMapper(OrderDao.class);
+        List<User> users = mapper.selectUsers();
+        for (User o:
+                users) {
+            System.out.println(o.toString());
+        }
+        System.out.println(users.size()+"");
+    }
+    private SqlSession init() throws IOException {
+        String sss = "mapper/sqlMapConfig.xml";
+        InputStream resourceAsStream = Resources.getResourceAsStream(sss);
+        SqlSessionFactory build = new SqlSessionFactoryBuilder().build(resourceAsStream);
+       return build.openSession();
+
     }
 }

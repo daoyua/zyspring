@@ -5,11 +5,10 @@ import java.util.ArrayList;
 
 public class Oder implements Serializable {
 
-    String name;
-    String sex;
-    double money;
-    int id;
-    User user;
+ private int id;
+ private int user_id;
+ private String number;
+private User user;
 
     public User getUser() {
         return user;
@@ -19,33 +18,6 @@ public class Oder implements Serializable {
         this.user = user;
     }
 
-    ArrayList<Integer> ids;
-
-    public ArrayList<Integer> getIds() {
-        return ids;
-    }
-
-    public void setIds(ArrayList<Integer> ids) {
-        this.ids = ids;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
     public int getId() {
         return id;
     }
@@ -54,20 +26,31 @@ public class Oder implements Serializable {
         this.id = id;
     }
 
-    public double getMoney() {
-        return money;
+
+
+    public String getNumber() {
+        return number;
     }
 
-    public void setMoney(double money) {
-        this.money = money;
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
     @Override
     public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", money=" + money +
-                ", id=" + id +
+        return "Oder{" +
+                "id=" + id +
+                ", user_id=" + user_id +
+                ", number='" + number + '\'' +
+                ", user=" + user +
                 '}';
     }
 }
