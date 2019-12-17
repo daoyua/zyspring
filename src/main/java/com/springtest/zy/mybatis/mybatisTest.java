@@ -18,7 +18,7 @@ import java.util.List;
 public class mybatisTest {
     @Test
     public void test() throws IOException {
-        String sss= "mapper/sqlMapConfig.xml";
+        String sss= "sqlMapConfig.xml";
         InputStream resourceAsStream = Resources.getResourceAsStream(sss);
         SqlSessionFactory build = new SqlSessionFactoryBuilder().build(resourceAsStream);
         SqlSession sqlSession = build.openSession();
@@ -108,7 +108,7 @@ public class mybatisTest {
         System.out.println(users.size()+"");
     }
     private SqlSession init() throws IOException {
-        String sss = "mapper/sqlMapConfig.xml";
+        String sss = "sqlMapConfig.xml";
         InputStream resourceAsStream = Resources.getResourceAsStream(sss);
         SqlSessionFactory build = new SqlSessionFactoryBuilder().build(resourceAsStream);
        return build.openSession();
