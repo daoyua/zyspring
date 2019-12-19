@@ -9,7 +9,8 @@ public class QuickStartTest {
 
     @RequestMapping("/quick")
     public String quick() {
-        return "hello springboot";
+
+        return "hello world spring boot  zy sfsefwefesf  ";
     }
 
     @RequestMapping("/user")
